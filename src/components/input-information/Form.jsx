@@ -1,3 +1,4 @@
+import { Input } from "./Input";
 
 export const Form = ({ updateState, fields }) => {
 
@@ -10,20 +11,11 @@ export const Form = ({ updateState, fields }) => {
 
     return (
         <form action="">
-
-        {
-            fields.map(( field, index ) => (
-                <>
-                    <label htmlFor={field.name}>{field.title}</label>
-                    <br />
-                    <input 
-                        type="text"
-                        name = { field.name }
-                        placeholder = { field.placeholder }/>
-                    <br />
-                </>
-            ))
-        }
+            {
+                fields.map((field, index) => (
+                    <Input key={field + index} field = { field } />
+                ))
+            }
         </form>
     )
 }

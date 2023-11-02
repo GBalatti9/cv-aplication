@@ -6,13 +6,13 @@ const fields = ['fullName', 'email', 'phoneNumber'];
 export const Container = () => {
 
     const [value, setValue] = useState(
-        { 
+        {
             firstName: 'Juan',
             email: '@.com',
             placeholder: 'placeholder'
         });
 
-        console.log({value});
+    console.log({ value });
 
     const updateState = (fieldValue, value) => {
         console.log({ fieldValue, value });
@@ -46,6 +46,20 @@ export const Container = () => {
                         title: 'Phone Number',
                         placeholder: 'Enter your phone number'
                     }
+                ]} />
+            <Form
+                updateState={updateState}
+                fields={[
+                    {
+                        name: 'studyInstitution',
+                        title: 'Institution',
+                        placeholder: 'Enter where did you study'
+                    },
+                    {
+                        name: 'degree',
+                        title: 'Degree',
+                        placeholder: 'Enter your degree'
+                    },
                 ]} />
             <h1>
                 {value.firstName}
