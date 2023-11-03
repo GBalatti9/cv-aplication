@@ -3,7 +3,7 @@ import { Input } from "./Input";
 
 export const Form = ({ updateState, fields, title }) => {
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     console.log({ fields });
 
@@ -17,7 +17,7 @@ export const Form = ({ updateState, fields, title }) => {
         setOpen(!open);
     }
     return (
-        <form>
+        <form className="m-4 p-1 rounded shadow bg-white">
             <div
                 // className="btn btn-primary"
                 type="button"
@@ -26,10 +26,10 @@ export const Form = ({ updateState, fields, title }) => {
                 aria-expanded={open}
                 onClick={toggleCollapse}
             >
-                <h3> {title} </h3>
+                <h3 className="fw-bold text-center p-1 fs-4"> {title} </h3>
             </div>
             <div className={`collapse ${open ? 'show' : ''}`} id="collapseExample">
-                <div className="card">
+                <div>
                     {
                         fields.map((field, index) => (
                             <Input

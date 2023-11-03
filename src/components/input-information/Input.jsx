@@ -2,15 +2,17 @@
 
 export const Input = ({ field, onInputValue }) => {
     return (
-        <>
-            <label htmlFor={field.name}>{field.title}</label>
-            <br />
+        <div className="p-2">
+            <label 
+                htmlFor={field.name}
+                className="fw-bold">
+                    {field.title}</label>
             <input
                 type = "text"
                 name = {field.name}
                 placeholder={field.placeholder}
-                onInput = {onInputValue}/>
-            <br />
-        </>
+                onInput = {onInputValue}
+                className="form-control bg-light fs-6"/>
+        </div>
     )
 }
