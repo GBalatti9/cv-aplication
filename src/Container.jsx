@@ -30,6 +30,7 @@ export const Container = () => {
         <>
             <Form
                 updateState={updateState}
+                title={'Personal Information'}
                 fields={[
                     {
                         name: 'fullName',
@@ -45,20 +46,76 @@ export const Container = () => {
                         name: 'phoneNumber',
                         title: 'Phone Number',
                         placeholder: 'Enter your phone number'
+                    },
+                    {
+                        name: 'address',
+                        title: 'Address',
+                        placeholder: 'Enter your address'
                     }
                 ]} />
             <Form
                 updateState={updateState}
+                title={'Education'}
                 fields={[
                     {
-                        name: 'studyInstitution',
-                        title: 'Institution',
-                        placeholder: 'Enter where did you study'
+                        name: 'school',
+                        title: 'School',
+                        placeholder: 'Enter school / university'
                     },
                     {
                         name: 'degree',
                         title: 'Degree',
                         placeholder: 'Enter your degree'
+                    },
+                    {
+                        name: 'startDateStudy',
+                        title: 'Start Date',
+                        placeholder: 'Enter Start Date'
+                    },
+                    {
+                        name: 'endDateStudy',
+                        title: 'End Date',
+                        placeholder: 'Enter End Date'
+                    },
+                    {
+                        name: 'locationStudy',
+                        title: 'Location',
+                        placeholder: 'Enter Location'
+                    },
+                ]} />
+            <Form
+                updateState={updateState}
+                title={'Experience'}
+                fields={[
+                    {
+                        name: 'companyName',
+                        title: 'Company Name',
+                        placeholder: 'Enter Company Name'
+                    },
+                    {
+                        name: 'position',
+                        title: 'Position',
+                        placeholder: 'Enter Position'
+                    },
+                    {
+                        name: 'startDateWork',
+                        title: 'Start Date',
+                        placeholder: 'Enter Start Date'
+                    },
+                    {
+                        name: 'endDateWork',
+                        title: 'End Date',
+                        placeholder: 'Enter End Date'
+                    },
+                    {
+                        name: 'locationWork',
+                        title: 'Location',
+                        placeholder: 'Enter location'
+                    },
+                    {
+                        name: 'descriptionWork',
+                        title: 'Description',
+                        placeholder: 'Enter Description'
                     },
                 ]} />
             <h1>
