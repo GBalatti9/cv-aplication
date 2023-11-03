@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Form } from "./components/input-information/Form";
 import { PersonContainer } from "./components/output-information/PersonContainer";
 
+
 const fields = ['fullName', 'email', 'phoneNumber'];
 
 let person = {

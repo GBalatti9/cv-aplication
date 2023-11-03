@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Input } from "./Input";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 export const Form = ({ updateState, fields, title }) => {
 
@@ -26,7 +29,11 @@ export const Form = ({ updateState, fields, title }) => {
                 aria-expanded={open}
                 onClick={toggleCollapse}
             >
-                <h3 className="fw-bold text-center p-1 fs-4"> {title} </h3>
+                
+                <div className="d-flex justify-content-center align-items-center">
+                <h3 className="fw-bold p-1 fs-4"> {title} </h3>
+                <FontAwesomeIcon icon={open ? faCaretUp : faCaretDown} size="lg" />
+                </div>
             </div>
             <div className={`collapse ${open ? 'show' : ''}`} id="collapseExample">
                 <div>
