@@ -37,8 +37,9 @@ export const Container = () => {
     }
 
     return (
-        <div className="row bg-body-secondary">
-            <div className="col-4 overflow-scroll">
+        <div className="row bg-body-secondary m-auto">
+            <h1 className="text-center m-2">Build your CV</h1>
+            <div className="col-4 offset-1 overflow-scroll">
                 <Form
                     updateState={updateState}
                     title={'Personal Information'}
