@@ -56,7 +56,7 @@ export const PersonContainer = ({ value }) => {
     ];
 
     return (
-        <div className="bg-white">
+        <div className="bg-white min-height">
                 <HeaderInfo
                     fullName={value.fullName}
                     email={value.email}

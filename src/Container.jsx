@@ -36,7 +36,7 @@ export const Container = () => {
     }
 
     return (
-        <div className="row bg-primary">
+        <div className="row bg-body-secondary">
             <div className="col-4 overflow-scroll">
                 <Form
                     updateState={updateState}
@@ -124,7 +124,7 @@ export const Container = () => {
                         }
                     ]} />
             </div>
-            <div className="col-6 border">
+            <div className="col-6 m-2">
                 <PersonContainer value={value} />
             </div>
         </div>
