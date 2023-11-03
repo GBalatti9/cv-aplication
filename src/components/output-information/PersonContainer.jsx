@@ -2,7 +2,6 @@ import { HeaderInfo } from "./HeaderInfo";
 import { SectionInformation } from "./SectionInformation";
 
 export const PersonContainer = ({ value }) => {
-    console.log(value);
 
     const educationData = [
         {

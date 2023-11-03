@@ -1,6 +1,6 @@
 
 
-export const Input = ({ field }) => {
+export const Input = ({ field, onInputValue }) => {
     return (
         <>
             <label htmlFor={field.name}>{field.title}</label>
@@ -8,7 +8,8 @@ export const Input = ({ field }) => {
             <input
                 type = "text"
                 name = {field.name}
-                placeholder={field.placeholder} />
+                placeholder={field.placeholder}
+                onInput = {onInputValue}/>
             <br />
         </>
     )
