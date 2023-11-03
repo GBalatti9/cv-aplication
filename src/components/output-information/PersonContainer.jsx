@@ -54,13 +54,13 @@ export const PersonContainer = ({ value }) => {
     ];
 
     return (
-        <>
-            <HeaderInfo
-                fullName={value.fullName}
-                email={value.email}
-                phoneNumber={value.phoneNumber}
-                address={value.address}
-            />
+        <div className="bg-white">
+                <HeaderInfo
+                    fullName={value.fullName}
+                    email={value.email}
+                    phoneNumber={value.phoneNumber}
+                    address={value.address}
+                />
 
             <SectionInformation
                 data={educationData}
@@ -68,6 +68,6 @@ export const PersonContainer = ({ value }) => {
             <SectionInformation
                 data={experienceData}
             />
-        </>
+        </div>
     )
 }
