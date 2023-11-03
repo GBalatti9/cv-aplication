@@ -1,16 +1,30 @@
 import { useState } from "react"
 import { Form } from "./components/input-information/Form";
+import { PersonContainer } from "./components/output-information/PersonContainer";
 
 const fields = ['fullName', 'email', 'phoneNumber'];
 
+let person = {
+    fullName: 'John Doe',
+    email: 'johndoe@gmail.com',
+    phoneNumber: '+54 1166554433',
+    address: 'Crist Drive 2066',
+    school: 'Reed College',
+    degree: 'Software Engineer',
+    startDateStudy: '1972',
+    endDateStudy: '1974',
+    locationStudy: 'Portland, Oregon',
+    companyName: 'Apple',
+    position: 'Developer',
+    startDateWork: '1976',
+    endDateWork: '1980',
+    locationWork: 'Cupertino, California',
+    descriptionWork: 'Bla bla bla bla bla bla bla',
+}
+
 export const Container = () => {
 
-    const [value, setValue] = useState(
-        {
-            firstName: 'Juan',
-            email: '@.com',
-            placeholder: 'placeholder'
-        });
+    const [value, setValue] = useState(person);
 
     console.log({ value });
 
@@ -23,7 +37,6 @@ export const Container = () => {
         }))
 
     }
-
 
 
     return (
@@ -83,7 +96,7 @@ export const Container = () => {
                         placeholder: 'Enter Location'
                     },
                 ]} />
-            <Form
+            {/* <Form
                 updateState={updateState}
                 title={'Experience'}
                 fields={[
@@ -117,10 +130,8 @@ export const Container = () => {
                         title: 'Description',
                         placeholder: 'Enter Description'
                     },
-                ]} />
-            <h1>
-                {value.firstName}
-            </h1>
+                ]} /> */}
+                <PersonContainer value = { value } />
         </>
     )
 }
