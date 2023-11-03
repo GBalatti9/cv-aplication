@@ -5,11 +5,12 @@ export const PersonContainer = ({ value }) => {
 
     const educationData = [
         {
-            name: 'School',
+            name: 'school',
             value: value.school,
+            className: 'fw-bold'
         },
         {
-            name: 'Degree',
+            name: 'degree',
             value: value.degree,
         },
         {
@@ -28,27 +29,28 @@ export const PersonContainer = ({ value }) => {
 
     const experienceData = [
         {
-            name: "Company Name",
+            name: "companyName",
             value: value.companyName,
+            className: 'fw-bold',
         },
         {
-            name: "Position",
+            name: "position",
             value: value.position,
         },
         {
-            name: "Start Date",
+            name: "startDateWork",
             value: value.startDateWork,
         },
         {
-            name: "End Date",
+            name: "endDateWork",
             value: value.endDateWork,
         },
         {
-            name: "Location",
+            name: "locationWork",
             value: value.locationWork,
         },
         {
-            name: "Description",
+            name: "descriptionWork",
             value: value.descriptionWork,
         },
     ];
@@ -62,10 +64,12 @@ export const PersonContainer = ({ value }) => {
                     address={value.address}
                 />
 
-            <SectionInformation
+            <SectionInformation 
+                title = {'Education'}
                 data={educationData}
             />
             <SectionInformation
+                title = {'Professional Experience'}
                 data={experienceData}
             />
         </div>

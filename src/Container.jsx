@@ -19,7 +19,6 @@ let person = {
     startDateWork: '1976',
     endDateWork: '1980',
     locationWork: 'Cupertino, California',
-    descriptionWork: 'Bla bla bla bla bla bla bla',
 }
 
 export const Container = () => {
@@ -122,12 +121,7 @@ export const Container = () => {
                             name: 'locationWork',
                             title: 'Location',
                             placeholder: 'Enter location'
-                        },
-                        {
-                            name: 'descriptionWork',
-                            title: 'Description',
-                            placeholder: 'Enter Description'
-                        },
+                        }
                     ]} />
             </div>
             <div className="col-6 border">
