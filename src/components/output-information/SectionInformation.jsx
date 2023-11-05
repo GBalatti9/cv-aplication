@@ -1,6 +1,8 @@
 
 
 export const SectionInformation = ({ data, title }) => {
+    console.log('SECTION');
+
     let timeInformation = data.filter((el) => el.name.includes('startDate') | el.name.includes('endDate') | el.name.includes('location'));
     const [ start, end, location ] = timeInformation;
     data = data.filter((el) => !timeInformation.includes(el));

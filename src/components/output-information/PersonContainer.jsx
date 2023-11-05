@@ -3,6 +3,8 @@ import { SectionInformation } from "./SectionInformation";
 
 export const PersonContainer = ({ value }) => {
 
+    console.log('PERSON CONTAINER');
+
     const educationData = [
         {
             name: 'school',
@@ -56,7 +58,7 @@ export const PersonContainer = ({ value }) => {
     ];
 
     return (
-        <div className="bg-white min-height">
+        <div className="bg-white min-height cv">
                 <HeaderInfo
                     fullName={value.fullName}
                     email={value.email}

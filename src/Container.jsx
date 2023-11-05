@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Form } from "./components/input-information/Form";
 import { PersonContainer } from "./components/output-information/PersonContainer";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
-
-const fields = ['fullName', 'email', 'phoneNumber'];
 
 let person = {
     fullName: 'John Doe',
@@ -25,6 +25,29 @@ let person = {
 export const Container = () => {
 
     const [value, setValue] = useState(person);
+    const [loader, setLoader] = useState(false);
+
+    const downloadPDF = () => {
+        setLoader(true);
+    }
+
+    useEffect(() => {
+        if (loader) {
+            const cvElement = document.querySelector('.cv');
+            html2canvas(cvElement).then((canvas) => {
+                const imgData = canvas.toDataURL('img/png');
+                const doc = new jsPDF('p', 'mm', 'a4');
+                const componentWidth = doc.internal.pageSize.getWidth();
+                const componentHeight = doc.internal.pageSize.getHeight();
+                doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+                doc.save('cv.pdf');
+                setLoader(false);
+            })
+            console.log(cvElement);
+        }
+    }, [loader])
+
+
 
     const updateState = (fieldValue, value) => {
         console.log({ fieldValue, value });
@@ -40,6 +63,16 @@ export const Container = () => {
         <div className="row bg-body-secondary m-auto">
             <h1 className="text-center m-2">Build your CV</h1>
             <div className="col-4 offset-1 overflow-scroll">
+                <div className="container-btn">
+
+                    <button type="button btn" onClick={downloadPDF} disabled={loader}>
+                        {
+                            loader 
+                            ? <span>Downloading</span>
+                            : <span>Download</span>
+                        }
+                    </button>
+                </div>
                 <Form
                     updateState={updateState}
                     title={'Personal Information'}

@@ -1,6 +1,7 @@
 import './style.css';
 
 export const HeaderInfo = ({ fullName, email, phoneNumber, address }) => {
+    console.log('HEADER INFO');
     return (
         <div className="custom-background-header d-flex flex-column text-center p-3 text-white">
             <div>
