@@ -3,6 +3,7 @@ import { Form } from "./components/input-information/Form";
 import { PersonContainer } from "./components/output-information/PersonContainer";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { FormContainer } from "./components/input-information/FormContainer";
 
 
 let person = {
@@ -62,7 +63,6 @@ export const Container = () => {
     return (
         <div className="row bg-body-secondary m-auto">
             <h1 className="text-center m-2">Build your CV</h1>
-            <div className="col-4 offset-1 overflow-scroll">
                 <div className="container-btn">
 
                     <button type="button btn" onClick={downloadPDF} disabled={loader}>
@@ -73,92 +73,7 @@ export const Container = () => {
                         }
                     </button>
                 </div>
-                <Form
-                    updateState={updateState}
-                    title={'Personal Information'}
-                    fields={[
-                        {
-                            name: 'fullName',
-                            title: 'Full Name',
-                            placeholder: 'Enter your full name'
-                        },
-                        {
-                            name: 'email',
-                            title: 'Email',
-                            placeholder: 'Enter your email'
-                        },
-                        {
-                            name: 'phoneNumber',
-                            title: 'Phone Number',
-                            placeholder: 'Enter your phone number'
-                        },
-                        {
-                            name: 'address',
-                            title: 'Address',
-                            placeholder: 'Enter your address'
-                        }
-                    ]} />
-                <Form
-                    updateState={updateState}
-                    title={'Education'}
-                    fields={[
-                        {
-                            name: 'school',
-                            title: 'School',
-                            placeholder: 'Enter school / university'
-                        },
-                        {
-                            name: 'degree',
-                            title: 'Degree',
-                            placeholder: 'Enter your degree'
-                        },
-                        {
-                            name: 'startDateStudy',
-                            title: 'Start Date',
-                            placeholder: 'Enter Start Date'
-                        },
-                        {
-                            name: 'endDateStudy',
-                            title: 'End Date',
-                            placeholder: 'Enter End Date'
-                        },
-                        {
-                            name: 'locationStudy',
-                            title: 'Location',
-                            placeholder: 'Enter Location'
-                        },
-                    ]} />
-                <Form
-                    updateState={updateState}
-                    title={'Experience'}
-                    fields={[
-                        {
-                            name: 'companyName',
-                            title: 'Company Name',
-                            placeholder: 'Enter Company Name'
-                        },
-                        {
-                            name: 'position',
-                            title: 'Position',
-                            placeholder: 'Enter Position'
-                        },
-                        {
-                            name: 'startDateWork',
-                            title: 'Start Date',
-                            placeholder: 'Enter Start Date'
-                        },
-                        {
-                            name: 'endDateWork',
-                            title: 'End Date',
-                            placeholder: 'Enter End Date'
-                        },
-                        {
-                            name: 'locationWork',
-                            title: 'Location',
-                            placeholder: 'Enter location'
-                        }
-                    ]} />
-            </div>
+                <FormContainer updateState={updateState}/>
             <div className="col-6 m-2">
                 <PersonContainer value={value} />
             </div>
